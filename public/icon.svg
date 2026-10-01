@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="omniBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Outer Rim Subtle Gradient -->
+    <linearGradient id="omniRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.5" />
+    </linearGradient>
+
+    <!-- Primary Omni Arc Gradient (Indigo to Cyan) -->
+    <linearGradient id="omniArc1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="45%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Secondary Omni Arc Gradient (Emerald to Amber & Violet) -->
+    <linearGradient id="omniArc2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Core Nexus Radial Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="1" />
+      <stop offset="60%" stop-color="#6366f1" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Sparkle Accent Gradient -->
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#67e8f9" />
+    </linearGradient>
+
+    <!-- Shadow filter for depth -->
+    <filter id="omniGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Icon Container with Rounded Corners (Apple/Android standard) -->
+  <rect width="512" height="512" rx="120" fill="url(#omniBg)" />
+  <rect width="508" height="508" x="2" y="2" rx="118" fill="none" stroke="url(#omniRim)" stroke-width="3" />
+
+  <!-- Ambient Glow Behind Central Ring -->
+  <circle cx="256" cy="256" r="140" fill="url(#coreGlow)" opacity="0.35" />
+
+  <!-- Outer Orbit Segment 1: Upper Right Flow -->
+  <path d="M 256 96 A 160 160 0 0 1 416 256 A 160 160 0 0 1 368 369"
+        fill="none"
+        stroke="url(#omniArc1)"
+        stroke-width="36"
+        stroke-linecap="round"
+        filter="url(#omniGlow)" />
+
+  <!-- Outer Orbit Segment 2: Lower Left Flow (completing the dynamic 'O') -->
+  <path d="M 256 416 A 160 160 0 0 1 96 256 A 160 160 0 0 1 144 143"
+        fill="none"
+        stroke="url(#omniArc2)"
+        stroke-width="36"
+        stroke-linecap="round"
+        filter="url(#omniGlow)" />
+
+  <!-- Inner Interlocking Nexus Loop (The unified Life Infinity 'O') -->
+  <path d="M 200 256 C 200 205 230 176 256 176 C 282 176 312 205 312 256 C 312 307 282 336 256 336 C 230 336 200 307 200 256 Z"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="14"
+        stroke-opacity="0.9"
+        stroke-linecap="round" />
+
+  <!-- Orbiting Node 1: Tasks / Focus (Electric Cyan) -->
+  <circle cx="416" cy="256" r="22" fill="#06b6d4" />
+  <circle cx="416" cy="256" r="12" fill="#ffffff" />
+
+  <!-- Orbiting Node 2: Health / Life (Emerald) -->
+  <circle cx="96" cy="256" r="22" fill="#10b981" />
+  <circle cx="96" cy="256" r="12" fill="#ffffff" />
+
+  <!-- Orbiting Node 3: Wealth / Milestone (Warm Gold Spark) -->
+  <circle cx="340" cy="120" r="16" fill="#f59e0b" />
+
+  <!-- Orbiting Node 4: Mind / Wisdom (Radiant Violet) -->
+  <circle cx="172" cy="392" r="16" fill="#a855f7" />
+
+  <!-- Central Omni Star / Core Spark -->
+  <g transform="translate(256, 256)">
+    <!-- 4-pointed diamond star -->
+    <path d="M 0 -36 Q 0 0 36 0 Q 0 0 0 36 Q 0 0 -36 0 Q 0 0 0 -36 Z" fill="url(#sparkGrad)" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+  </g>
+</svg>
